@@ -28,21 +28,17 @@ export default function UserHeader() {
               >
                 Programs
               </Link>
-              <Link
-                href="/admin/users"
-                className="text-gray-600 hover:text-purple-600 transition-colors"
-              >
-                Users
-              </Link>
             </nav>
           </div>
 
-          {/* Right side - User info and Logout */}
+          {/* Right side - Admin Users link, User info and Logout */}
           <div className="flex items-center space-x-4">
-            <span className="text-sm text-gray-600">
-              <span className="font-medium text-gray-900">{session.user.name}</span>
-              <span className="text-gray-500 ml-1 hidden sm:inline">({session.user.email})</span>
-            </span>
+            <Link
+              href="/admin/users"
+              className="text-sm font-medium text-purple-600 hover:text-purple-800 transition-colors"
+            >
+              Admin Users
+            </Link>
             <button
               type="button"
               onClick={handleLogout}
