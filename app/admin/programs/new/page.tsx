@@ -246,7 +246,7 @@ export default function NewProgramPage() {
                     type="checkbox"
                     id="showApplyButton"
                     checked={formData.showApplyButton}
-                    onChange={(e) => setFormData({ ...formData, showApplyButton: e.target.checked })}
+                    onChange={(e) => setFormData({ ...formData, showApplyButton: e.target.checked, isClassFull: e.target.checked ? false : formData.isClassFull })}
                     className="h-4 w-4 text-purple-600 focus:ring-purple-500 border-gray-300 rounded"
                   />
                   <label htmlFor="showApplyButton" className="ml-2 text-sm text-gray-700">
@@ -258,7 +258,7 @@ export default function NewProgramPage() {
                     type="checkbox"
                     id="isClassFull"
                     checked={formData.isClassFull}
-                    onChange={(e) => setFormData({ ...formData, isClassFull: e.target.checked })}
+                    onChange={(e) => setFormData({ ...formData, isClassFull: e.target.checked, showApplyButton: e.target.checked ? false : formData.showApplyButton })}
                     className="h-4 w-4 text-orange-600 focus:ring-orange-500 border-gray-300 rounded"
                   />
                   <label htmlFor="isClassFull" className="ml-2 text-sm text-gray-700">
