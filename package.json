@@ -38,6 +38,7 @@
     "eslint": "^9",
     "eslint-config-next": "15.5.7",
     "eslint-config-prettier": "^10.1.8",
+    "pg": "^8.18.0",
     "prettier": "^3.6.2",
     "tailwindcss": "^4",
     "tsx": "^4.20.5",

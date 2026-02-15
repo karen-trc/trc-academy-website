@@ -131,24 +131,40 @@ export default async function ProgramsPage() {
                   <div className={`text-white px-6 py-3 text-sm font-semibold ${
                     isProgramActive(program.startDate, program.endDate)
                       ? 'bg-gradient-to-r from-trc-blue-600 to-trc-blue-700'
-                      : 'bg-gradient-to-r from-trc-gold-600 to-trc-gold-700'
+                      : !isProgramUpcoming(program.startDate)
+                        ? 'bg-gradient-to-r from-gray-500 to-gray-600'
+                        : program.isClassFull
+                          ? 'bg-gradient-to-r from-orange-500 to-orange-600'
+                          : 'bg-gradient-to-r from-trc-gold-600 to-trc-gold-700'
                   }`}>
-                    {isProgramUpcoming(program.startDate) ? (
-                      <span className="flex items-center">
-                        <svg className="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        Enrollment Open
-                      </span>
-                    ) : isProgramActive(program.startDate, program.endDate) ? (
+                    {isProgramActive(program.startDate, program.endDate) ? (
                       <span className="flex items-center">
                         <svg className="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                         </svg>
                         In Progress
                       </span>
+                    ) : !isProgramUpcoming(program.startDate) ? (
+                      <span className="flex items-center">
+                        <svg className="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        Completed
+                      </span>
+                    ) : program.isClassFull ? (
+                      <span className="flex items-center">
+                        <svg className="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
+                        </svg>
+                        Class Full
+                      </span>
                     ) : (
-                      <span>Program</span>
+                      <span className="flex items-center">
+                        <svg className="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        Enrollment Open
+                      </span>
                     )}
                   </div>
 
