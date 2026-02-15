@@ -22,6 +22,8 @@ export default function EditProgramPage() {
     paymentConditions: '',
     scheduleInfo: '',
     isActive: true,
+    showApplyButton: true,
+    isClassFull: false,
   });
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
@@ -56,6 +58,8 @@ export default function EditProgramPage() {
           paymentConditions: program.paymentConditions || '',
           scheduleInfo: program.scheduleInfo || '',
           isActive: program.isActive,
+          showApplyButton: program.showApplyButton ?? true,
+          isClassFull: program.isClassFull ?? false,
         });
       } else {
         setError('Failed to load program');
@@ -263,17 +267,43 @@ export default function EditProgramPage() {
             {/* Program Status */}
             <div>
               <h3 className="text-lg font-medium text-gray-900 mb-4">Program Status</h3>
-              <div className="flex items-center">
-                <input
-                  type="checkbox"
-                  id="isActive"
-                  checked={formData.isActive}
-                  onChange={(e) => setFormData({ ...formData, isActive: e.target.checked })}
-                  className="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded"
-                />
-                <label htmlFor="isActive" className="ml-2 text-sm text-gray-700">
-                  Program is active (visible on public programs page)
-                </label>
+              <div className="space-y-3">
+                <div className="flex items-center">
+                  <input
+                    type="checkbox"
+                    id="isActive"
+                    checked={formData.isActive}
+                    onChange={(e) => setFormData({ ...formData, isActive: e.target.checked })}
+                    className="h-4 w-4 text-green-600 focus:ring-green-500 border-gray-300 rounded"
+                  />
+                  <label htmlFor="isActive" className="ml-2 text-sm text-gray-700">
+                    Program is active (visible on public programs page)
+                  </label>
+                </div>
+                <div className="flex items-center">
+                  <input
+                    type="checkbox"
+                    id="showApplyButton"
+                    checked={formData.showApplyButton}
+                    onChange={(e) => setFormData({ ...formData, showApplyButton: e.target.checked })}
+                    className="h-4 w-4 text-purple-600 focus:ring-purple-500 border-gray-300 rounded"
+                  />
+                  <label htmlFor="showApplyButton" className="ml-2 text-sm text-gray-700">
+                    Show &quot;Apply Now&quot; button (allows visitors to apply for this program)
+                  </label>
+                </div>
+                <div className="flex items-center">
+                  <input
+                    type="checkbox"
+                    id="isClassFull"
+                    checked={formData.isClassFull}
+                    onChange={(e) => setFormData({ ...formData, isClassFull: e.target.checked })}
+                    className="h-4 w-4 text-orange-600 focus:ring-orange-500 border-gray-300 rounded"
+                  />
+                  <label htmlFor="isClassFull" className="ml-2 text-sm text-gray-700">
+                    Class is full (shows &quot;Class Full &ndash; See Next Class&quot; instead of Apply button)
+                  </label>
+                </div>
               </div>
             </div>
 

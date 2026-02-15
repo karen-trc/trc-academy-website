@@ -31,6 +31,8 @@ model Program {
   paymentConditions String?  @db.Text
   scheduleInfo      String?  @db.Text // Schedule details (orientation, monthly schedule, etc.)
   isActive          Boolean  @default(true)
+  showApplyButton   Boolean  @default(true) // Toggle "Apply Now" CTA button visibility
+  isClassFull       Boolean  @default(false) // Toggle "Class Full" CTA message
   createdAt         DateTime @default(now())
   updatedAt         DateTime @updatedAt
 }

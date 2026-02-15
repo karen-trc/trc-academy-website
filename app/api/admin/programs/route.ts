@@ -41,7 +41,7 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json();
-    const { title, teacherName, description, startDate, endDate, price, paymentConditions, scheduleInfo, isActive } = body;
+    const { title, teacherName, description, startDate, endDate, price, paymentConditions, scheduleInfo, isActive, showApplyButton, isClassFull } = body;
 
     // Validation
     if (!title || !teacherName || !startDate || !endDate) {
@@ -69,6 +69,8 @@ export async function POST(request: NextRequest) {
         paymentConditions: paymentConditions || null,
         scheduleInfo: scheduleInfo || null,
         isActive: isActive ?? true,
+        showApplyButton: showApplyButton ?? true,
+        isClassFull: isClassFull ?? false,
       },
     });
 

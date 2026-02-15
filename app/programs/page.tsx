@@ -128,7 +128,11 @@ export default async function ProgramsPage() {
                   className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 border border-gray-100"
                 >
                   {/* Program Status Badge */}
-                  <div className="bg-gradient-to-r from-trc-gold-600 to-trc-gold-700 text-white px-6 py-3 text-sm font-semibold">
+                  <div className={`text-white px-6 py-3 text-sm font-semibold ${
+                    isProgramActive(program.startDate, program.endDate)
+                      ? 'bg-gradient-to-r from-trc-blue-600 to-trc-blue-700'
+                      : 'bg-gradient-to-r from-trc-gold-600 to-trc-gold-700'
+                  }`}>
                     {isProgramUpcoming(program.startDate) ? (
                       <span className="flex items-center">
                         <svg className="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -248,13 +252,25 @@ export default async function ProgramsPage() {
                       </div>
                     )}
 
-                    {/* Apply Button */}
-                    <Link
-                      href="/contact"
-                      className="block w-full text-center bg-gradient-to-r from-trc-blue-600 to-trc-blue-700 text-white py-3 px-4 rounded-lg font-semibold hover:from-trc-blue-700 hover:to-trc-blue-800 transition-all duration-300 shadow-md hover:shadow-lg"
-                    >
-                      Apply Now
-                    </Link>
+                    {/* CTA Button - Priority: 1. Started → 2. Class Full → 3. Apply Now → 4. Nothing */}
+                    {isProgramActive(program.startDate, program.endDate) ? (
+                      <div className="block w-full text-center bg-gray-400 text-white py-3 px-4 rounded-lg font-semibold cursor-not-allowed">
+                        Program in Progress
+                      </div>
+                    ) : !isProgramUpcoming(program.startDate) ? (
+                      null
+                    ) : program.isClassFull ? (
+                      <div className="block w-full text-center bg-orange-500 text-white py-3 px-4 rounded-lg font-semibold cursor-not-allowed">
+                        Class Full &ndash; See Next Class
+                      </div>
+                    ) : program.showApplyButton ? (
+                      <Link
+                        href="/contact"
+                        className="block w-full text-center bg-gradient-to-r from-trc-blue-600 to-trc-blue-700 text-white py-3 px-4 rounded-lg font-semibold hover:from-trc-blue-700 hover:to-trc-blue-800 transition-all duration-300 shadow-md hover:shadow-lg"
+                      >
+                        Apply Now
+                      </Link>
+                    ) : null}
                   </div>
                 </div>
               ))}

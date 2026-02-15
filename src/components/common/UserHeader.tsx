@@ -28,6 +28,12 @@ export default function UserHeader() {
               >
                 Programs
               </Link>
+              <Link
+                href="/admin/users"
+                className="text-gray-600 hover:text-purple-600 transition-colors"
+              >
+                Users
+              </Link>
             </nav>
           </div>
 
