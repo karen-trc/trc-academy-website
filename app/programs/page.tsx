@@ -258,7 +258,9 @@ export default async function ProgramsPage() {
                         Program in Progress
                       </div>
                     ) : !isProgramUpcoming(program.startDate) ? (
-                      null
+                      <div className="block w-full text-center bg-gray-500 text-white py-3 px-4 rounded-lg font-semibold cursor-not-allowed">
+                        Class Completed
+                      </div>
                     ) : program.isClassFull ? (
                       <div className="block w-full text-center bg-orange-500 text-white py-3 px-4 rounded-lg font-semibold cursor-not-allowed">
                         Class Full &ndash; See Next Class
