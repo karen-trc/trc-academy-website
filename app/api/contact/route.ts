@@ -72,18 +72,41 @@ export async function POST(request: Request) {
       );
     }
 
-    // Note: Customer confirmation email is temporarily disabled until domain verification
-    // Once domain is verified in Resend, we can re-enable sending confirmation emails to customers
-    console.log(`Contact form submission from ${name} (${email}) - Admin notified successfully`);
+    // Send confirmation email to customer
+    const customerEmailHtml = `
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #333;">
+        <div style="background: linear-gradient(135deg, #1e3a5f, #2c5282); padding: 30px; text-align: center;">
+          <h1 style="color: white; margin: 0; font-size: 24px;">TRC Training Academy</h1>
+        </div>
+        <div style="padding: 30px; background: #ffffff;">
+          <h2 style="color: #1e3a5f;">Thank You, ${name}!</h2>
+          <p>We have received your inquiry regarding <strong>${interest}</strong> and appreciate your interest in TRC Training Academy.</p>
+          <p>Karen will personally review your message and get back to you <strong>within 24 hours</strong>.</p>
+          <div style="background: #f7fafc; border-left: 4px solid #d69e2e; padding: 15px; margin: 20px 0; border-radius: 4px;">
+            <p style="margin: 0; font-weight: bold; color: #1e3a5f;">In the meantime, feel free to reach out directly:</p>
+            <p style="margin: 8px 0 0 0;">Email: karen@tabularasacoaching.com<br>Phone: (610) 228-4145</p>
+          </div>
+          <p>We look forward to connecting with you!</p>
+          <p style="margin-top: 20px;">Warm regards,<br><strong>TRC Training Academy</strong></p>
+        </div>
+        <div style="background: #f7fafc; padding: 15px; text-align: center; font-size: 12px; color: #718096;">
+          <p style="margin: 0;">TRC Training Academy | trctrainingacademy.com</p>
+        </div>
+      </div>
+    `;
 
-    /* Temporarily disabled - uncomment after domain verification
     const customerEmail = await resend.emails.send({
       from: 'TRC Training Academy <onboarding@resend.dev>',
       to: email,
       subject: 'Thank You for Contacting TRC Training Academy',
       html: customerEmailHtml,
     });
-    */
+
+    if (customerEmail.error) {
+      console.warn('Customer confirmation email failed:', customerEmail.error);
+    }
+
+    console.log(`Contact form submission from ${name} (${email}) - Admin notified, confirmation sent`);
 
     return NextResponse.json(
       {
