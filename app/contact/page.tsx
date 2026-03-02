@@ -11,6 +11,7 @@ export default function ContactPage() {
     phone: '',
     interest: '',
     message: '',
+    website: '', // honeypot field — must stay empty for real users
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -54,6 +55,7 @@ export default function ContactPage() {
         body: JSON.stringify({
           ...formData,
           recaptchaToken,
+          website: formData.website,
         }),
       });
 
@@ -69,6 +71,7 @@ export default function ContactPage() {
           phone: '',
           interest: '',
           message: '',
+          website: '',
         });
       } else {
         setSubmitStatus('error');
@@ -152,6 +155,20 @@ export default function ContactPage() {
                   )}
 
                   <form onSubmit={handleSubmit} className="bg-white p-8 rounded-lg shadow-md space-y-6">
+                    {/* Honeypot — hidden from real users, traps bots */}
+                    <div style={{ position: 'absolute', left: '-9999px', top: '-9999px' }} aria-hidden="true">
+                      <label htmlFor="website">Website (leave blank)</label>
+                      <input
+                        type="text"
+                        id="website"
+                        name="website"
+                        tabIndex={-1}
+                        autoComplete="off"
+                        value={formData.website}
+                        onChange={handleChange}
+                      />
+                    </div>
+
                     <div>
                       <label htmlFor="name" className="block text-lg font-medium text-trc-gray-900 mb-2">
                         Full Name *
