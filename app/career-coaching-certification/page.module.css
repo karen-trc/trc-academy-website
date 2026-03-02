@@ -1,0 +1,117 @@
+:root {
+  --blue: #0d72f2;
+  --blue-deep: #0952b3;
+  --blue-dark: #063d87;
+  --orange: #F28D0D;
+  --orange-light: #f7a93e;
+  --cream: #FAF8F3;
+  --warm-white: #FFFDF9;
+  --text: #0d1a2e;
+  --text-mid: #2a4060;
+}
+
+.hero { min-height: 100vh; background: #063d87; position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 80px 40px; }
+.hero::before { content: ''; position: absolute; top: -20%; right: -15%; width: 65vw; height: 65vw; border-radius: 50%; background: radial-gradient(circle, rgba(242,141,13,0.22) 0%, transparent 70%); pointer-events: none; }
+.hero::after { content: ''; position: absolute; bottom: -10%; left: -10%; width: 45vw; height: 45vw; border-radius: 50%; background: radial-gradient(circle, rgba(13,114,242,0.4) 0%, transparent 70%); pointer-events: none; }
+.heroContent { text-align: center; max-width: 880px; position: relative; z-index: 2; animation: fadeUp 1s ease both; }
+.heroEyebrow { font-size: 0.82rem; letter-spacing: 0.22em; text-transform: uppercase; color: #f7a93e; margin-bottom: 24px; display: block; }
+.hero h1 { font-size: clamp(2.8rem, 6vw, 5rem); color: #fff; line-height: 1.15; margin-bottom: 28px; }
+.hero h1 em { font-style: italic; color: #f7a93e; }
+.heroSub { font-size: 1.15rem; font-style: italic; color: rgba(255,255,255,0.78); line-height: 1.8; max-width: 640px; margin: 0 auto 44px; }
+.heroCta { display: inline-block; background: #F28D0D; color: #fff; font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; padding: 18px 52px; border-radius: 2px; transition: background 0.3s, transform 0.2s; }
+.heroCta:hover { background: #f7a93e; transform: translateY(-2px); }
+.heroBadges { margin-top: 56px; display: flex; justify-content: center; gap: 48px; flex-wrap: wrap; }
+.badge { text-align: center; color: rgba(255,255,255,0.65); }
+.badgeNum { display: block; font-size: 2.4rem; color: #f7a93e; line-height: 1; margin-bottom: 6px; }
+.badgeLabel { font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; }
+
+.opportunity { background: #eef5ff; padding: 60px 40px; text-align: center; border-top: 5px solid #0d72f2; }
+.opportunityEyebrow { font-size: 0.78rem; letter-spacing: 0.22em; text-transform: uppercase; color: #0d72f2; margin-bottom: 16px; display: block; font-weight: bold; }
+.opportunity h2 { font-size: clamp(1.6rem, 3vw, 2.4rem); color: #063d87; max-width: 760px; margin: 0 auto 20px; line-height: 1.3; }
+.opportunity p { color: #2a4060; font-size: 1.05rem; font-style: italic; line-height: 1.8; max-width: 700px; margin: 0 auto 14px; }
+.opportunityHighlight { display: inline-block; margin-top: 20px; background: #0d72f2; color: #fff; font-size: 1.05rem; font-style: italic; line-height: 1.7; max-width: 680px; padding: 20px 36px; border-radius: 4px; }
+
+.truth { background: #F28D0D; padding: 80px 40px; text-align: center; }
+.truth h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); color: #fff; max-width: 760px; margin: 0 auto 24px; line-height: 1.3; }
+.truth p { font-size: 1.1rem; font-style: italic; color: rgba(255,255,255,0.9); max-width: 640px; margin: 0 auto; line-height: 1.8; }
+
+.about { padding: 100px 40px; max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.aboutLabel { font-size: 0.78rem; letter-spacing: 0.22em; text-transform: uppercase; color: #F28D0D; margin-bottom: 16px; display: block; }
+.about h2 { font-size: clamp(2rem, 3.5vw, 2.8rem); color: #063d87; line-height: 1.25; margin-bottom: 24px; }
+.about p { color: #2a4060; line-height: 1.85; margin-bottom: 18px; font-style: italic; font-size: 1.05rem; }
+.aboutVisual { background: #0d72f2; border-radius: 4px; padding: 56px 44px; position: relative; }
+.aboutVisual::before { content: ''; position: absolute; top: 16px; left: 16px; right: -16px; bottom: -16px; border: 2px solid #F28D0D; border-radius: 4px; z-index: -1; }
+.aboutQuote { font-style: italic; font-size: 1.35rem; color: #fff; line-height: 1.6; margin-bottom: 28px; }
+.aboutQuoteAttr { font-size: 0.82rem; color: #f7a93e; letter-spacing: 0.1em; text-transform: uppercase; }
+
+.curriculum { background: #FAF8F3; padding: 100px 40px; }
+.sectionHeader { text-align: center; margin-bottom: 70px; }
+.sectionLabel { font-size: 0.78rem; letter-spacing: 0.22em; text-transform: uppercase; color: #F28D0D; margin-bottom: 14px; display: block; }
+.sectionHeader h2 { font-size: clamp(2rem, 3.5vw, 2.8rem); color: #063d87; line-height: 1.25; max-width: 600px; margin: 0 auto; }
+.curriculumGrid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 28px; }
+.curriculumCard { background: #fff; border-radius: 4px; padding: 40px 36px; border-top: 4px solid #0d72f2; transition: transform 0.3s, box-shadow 0.3s; }
+.curriculumCard:hover { transform: translateY(-6px); box-shadow: 0 24px 48px rgba(13,82,179,0.12); }
+.cardNum { font-size: 3rem; color: #0d72f2; opacity: 0.18; line-height: 1; margin-bottom: 12px; }
+.cardTitle { font-size: 1.25rem; color: #063d87; margin-bottom: 14px; }
+.cardDesc { font-size: 0.95rem; font-style: italic; color: #2a4060; line-height: 1.8; }
+
+.accreditation { background: #063d87; padding: 70px 40px; text-align: center; }
+.accreditation h2 { font-size: clamp(1.6rem, 3vw, 2.4rem); color: #fff; margin-bottom: 18px; line-height: 1.3; }
+.accreditation h2 em { font-style: italic; color: #f7a93e; }
+.accreditation p { color: rgba(255,255,255,0.8); font-style: italic; font-size: 1.05rem; max-width: 660px; margin: 0 auto; line-height: 1.8; }
+
+.aiSection { padding: 100px 40px; max-width: 1000px; margin: 0 auto; text-align: center; }
+.aiSection h2 { font-size: clamp(2rem, 3.5vw, 2.8rem); color: #063d87; margin-bottom: 20px; line-height: 1.3; }
+.aiSection > p { color: #2a4060; font-size: 1.05rem; font-style: italic; line-height: 1.85; max-width: 680px; margin: 0 auto 60px; }
+.aiTools { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
+.aiToolTag { background: #0d72f2; color: rgba(255,255,255,0.92); padding: 12px 24px; border-radius: 40px; font-size: 0.88rem; font-style: italic; transition: background 0.2s; }
+.aiToolTag:hover { background: #F28D0D; }
+
+.humanBanner { background: #063d87; padding: 90px 40px; text-align: center; position: relative; overflow: hidden; }
+.humanBanner::before { content: '"'; font-size: 28rem; color: rgba(255,255,255,0.03); position: absolute; top: -80px; left: 50%; transform: translateX(-50%); line-height: 1; pointer-events: none; }
+.humanBanner h2 { font-style: italic; font-size: clamp(1.8rem, 4vw, 3.2rem); color: #fff; max-width: 800px; margin: 0 auto 28px; line-height: 1.3; position: relative; z-index: 1; }
+.humanBanner p { color: rgba(255,255,255,0.72); font-size: 1.05rem; font-style: italic; line-height: 1.8; max-width: 580px; margin: 0 auto; position: relative; z-index: 1; }
+
+.income { padding: 100px 40px; background: #FAF8F3; }
+.incomeInner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+.income h2 { font-size: clamp(2rem, 3.5vw, 2.8rem); color: #063d87; line-height: 1.25; margin-bottom: 24px; }
+.incomeText p { color: #2a4060; line-height: 1.85; font-style: italic; font-size: 1.05rem; margin-bottom: 16px; }
+.incomeCards { display: flex; flex-direction: column; gap: 20px; }
+.incomeCard { background: #fff; border-radius: 4px; padding: 28px 32px; border-left: 4px solid #F28D0D; }
+.incomeCard h3 { font-size: 1.1rem; color: #063d87; margin-bottom: 8px; }
+.incomeCard p { font-size: 0.95rem; font-style: italic; color: #2a4060; line-height: 1.7; }
+
+.pricing { background: #0d72f2; padding: 80px 40px; text-align: center; }
+.pricingEyebrow { font-size: 0.78rem; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.7); margin-bottom: 16px; display: block; }
+.pricing h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); color: #fff; margin-bottom: 8px; line-height: 1.3; }
+.pricingAmount { font-size: clamp(4rem, 8vw, 7rem); color: #f7a93e; font-style: italic; line-height: 1; margin: 20px 0 16px; display: block; }
+.pricingIncludes { color: rgba(255,255,255,0.8); font-style: italic; font-size: 1rem; max-width: 520px; margin: 0 auto 36px; line-height: 1.7; }
+.pricingBtn { display: inline-block; background: #fff; color: #063d87; font-size: 0.9rem; font-family: Georgia, serif; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; padding: 18px 52px; border-radius: 2px; font-weight: bold; transition: background 0.3s, transform 0.2s; }
+.pricingBtn:hover { background: #f7a93e; color: #fff; transform: translateY(-2px); }
+
+.scholarship { background: #063d87; padding: 90px 40px; text-align: center; }
+.scholarship h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); color: #fff; margin-bottom: 16px; line-height: 1.3; }
+.scholarship > p { color: rgba(255,255,255,0.8); font-style: italic; font-size: 1.05rem; max-width: 620px; margin: 0 auto 48px; line-height: 1.8; }
+.scholarshipCards { display: flex; justify-content: center; gap: 28px; flex-wrap: wrap; max-width: 860px; margin: 0 auto; }
+.scholarshipCard { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18); border-radius: 4px; padding: 44px 36px 36px; flex: 1; min-width: 240px; max-width: 320px; position: relative; transition: background 0.3s; }
+.scholarshipCard:hover { background: rgba(255,255,255,0.13); }
+.scholarshipRibbon { position: absolute; top: -1px; left: 50%; transform: translateX(-50%); background: #F28D0D; color: #fff; font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; padding: 6px 18px; border-radius: 0 0 4px 4px; white-space: nowrap; }
+.scholarshipAward { font-size: 2.2rem; color: #f7a93e; margin: 16px 0 10px; font-style: italic; }
+.scholarshipCard h3 { font-size: 1.15rem; color: #fff; margin-bottom: 14px; }
+.scholarshipCard p { font-size: 0.9rem; font-style: italic; color: rgba(255,255,255,0.68); line-height: 1.7; }
+.financingNote { background: rgba(255,255,255,0.06); border: 1px solid rgba(242,141,13,0.4); border-radius: 4px; padding: 24px 36px; max-width: 560px; margin: 44px auto 0; }
+.financingNote p { font-style: italic; color: rgba(255,255,255,0.82); font-size: 1rem; line-height: 1.7; }
+.financingNote strong { color: #f7a93e; font-style: normal; }
+
+.ctaSection { background: #F28D0D; padding: 100px 40px; text-align: center; }
+.ctaSection h2 { font-size: clamp(2.2rem, 4vw, 3.4rem); color: #fff; line-height: 1.25; margin-bottom: 24px; }
+.ctaSection p { color: rgba(255,255,255,0.9); font-size: 1.1rem; font-style: italic; line-height: 1.8; max-width: 580px; margin: 0 auto 44px; }
+.ctaUrgency { display: inline-block; background: rgba(0,0,0,0.18); color: #fff; font-size: 0.82rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 10px 28px; border-radius: 40px; margin-bottom: 32px; }
+.ctaBtn { display: inline-block; background: #063d87; color: #fff; font-size: 0.9rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; padding: 18px 52px; border-radius: 2px; transition: background 0.3s, transform 0.2s; }
+.ctaBtn:hover { background: #041f47; transform: translateY(-2px); }
+
+@media (max-width: 768px) {
+  .about, .incomeInner { grid-template-columns: 1fr; gap: 40px; }
+}
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
