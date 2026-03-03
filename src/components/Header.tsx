@@ -13,7 +13,7 @@ const Header = () => {
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
     { name: 'Coach Training', href: '/coaching-training' },
-    { name: 'Coach Certification', href: '/career-coaching-certification' },
+    { name: 'Career Coach Certification', href: '/career-coaching-certification' },
     { name: 'Programs', href: '/programs' },
     { name: 'Contact', href: '/contact' },
     { name: 'Login', href: '/login' },
