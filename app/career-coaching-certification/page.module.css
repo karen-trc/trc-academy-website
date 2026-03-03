@@ -81,6 +81,20 @@
 .incomeCard h3 { font-size: 1.1rem; color: #063d87; margin-bottom: 8px; }
 .incomeCard p { font-size: 0.95rem; font-style: italic; color: #2a4060; line-height: 1.7; }
 
+.schedule { background: #FAF8F3; padding: 90px 40px; text-align: center; }
+.schedule h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); color: #063d87; margin-bottom: 12px; line-height: 1.3; }
+.scheduleIntro { color: #2a4060; font-style: italic; font-size: 1.05rem; max-width: 520px; margin: 0 auto 52px; line-height: 1.7; }
+.scheduleGrid { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; max-width: 900px; margin: 0 auto; }
+.scheduleItem { background: #fff; border-radius: 4px; padding: 24px 32px; border-top: 4px solid #0d72f2; min-width: 140px; flex: 1; max-width: 180px; transition: transform 0.2s, box-shadow 0.2s; }
+.scheduleItem:hover { transform: translateY(-4px); box-shadow: 0 16px 36px rgba(13,82,179,0.1); }
+.scheduleDate { display: block; font-size: 1.35rem; color: #063d87; margin-bottom: 6px; }
+.scheduleLabel { display: block; font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; color: #2a4060; font-style: italic; }
+.scheduleSpecial { border-top-color: #F28D0D; }
+.scheduleSpecial .scheduleDate { color: #F28D0D; }
+.scheduleGrad { border-top-color: #F28D0D; background: #063d87; }
+.scheduleGrad .scheduleDate { color: #f7a93e; }
+.scheduleGrad .scheduleLabel { color: rgba(255,255,255,0.8); }
+
 .pricing { background: #0d72f2; padding: 80px 40px; text-align: center; }
 .pricingEyebrow { font-size: 0.78rem; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.7); margin-bottom: 16px; display: block; }
 .pricing h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); color: #fff; margin-bottom: 8px; line-height: 1.3; }

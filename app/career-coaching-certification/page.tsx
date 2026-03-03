@@ -151,6 +151,47 @@ export default function CareerCoachCertification() {
         </div>
       </section>
 
+      {/* Schedule */}
+      <section className={styles.schedule}>
+        <span className={styles.sectionLabel}>Spring 2026 Cohort</span>
+        <h2>Class Schedule</h2>
+        <p className={styles.scheduleIntro}>All sessions are held on Saturdays. Mark your calendar and reserve your seat today.</p>
+        <div className={styles.scheduleGrid}>
+          <div className={styles.scheduleItem}>
+            <span className={styles.scheduleDate}>April 18</span>
+            <span className={styles.scheduleLabel}>Class 1</span>
+          </div>
+          <div className={styles.scheduleItem}>
+            <span className={styles.scheduleDate}>April 25</span>
+            <span className={styles.scheduleLabel}>Class 2</span>
+          </div>
+          <div className={styles.scheduleItem}>
+            <span className={styles.scheduleDate}>May 9</span>
+            <span className={styles.scheduleLabel}>Class 3</span>
+          </div>
+          <div className={styles.scheduleItem}>
+            <span className={styles.scheduleDate}>May 16</span>
+            <span className={styles.scheduleLabel}>Class 4</span>
+          </div>
+          <div className={styles.scheduleItem}>
+            <span className={styles.scheduleDate}>May 23</span>
+            <span className={styles.scheduleLabel}>Class 5</span>
+          </div>
+          <div className={styles.scheduleItem}>
+            <span className={styles.scheduleDate}>June 6</span>
+            <span className={styles.scheduleLabel}>Class 6</span>
+          </div>
+          <div className={`${styles.scheduleItem} ${styles.scheduleSpecial}`}>
+            <span className={styles.scheduleDate}>Final</span>
+            <span className={styles.scheduleLabel}>Certification Exam</span>
+          </div>
+          <div className={`${styles.scheduleItem} ${styles.scheduleGrad}`}>
+            <span className={styles.scheduleDate}>June 20</span>
+            <span className={styles.scheduleLabel}>Graduation</span>
+          </div>
+        </div>
+      </section>
+
       {/* Pricing */}
       <section className={styles.pricing}>
         <span className={styles.pricingEyebrow}>Investment in Your Future</span>
