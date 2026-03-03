@@ -156,38 +156,26 @@ export default function CareerCoachCertification() {
         <span className={styles.sectionLabel}>Spring 2026 Cohort</span>
         <h2>Class Schedule</h2>
         <p className={styles.scheduleIntro}>All sessions are held on Saturdays. Mark your calendar and reserve your seat today.</p>
-        <div className={styles.scheduleGrid}>
-          <div className={styles.scheduleItem}>
-            <span className={styles.scheduleDate}>April 18</span>
-            <span className={styles.scheduleLabel}>Class 1</span>
+        <div className={styles.scheduleList}>
+          <div className={styles.scheduleRow}>
+            <span className={styles.scheduleMonth}>April</span>
+            <span className={styles.scheduleDates}>18, 25</span>
           </div>
-          <div className={styles.scheduleItem}>
-            <span className={styles.scheduleDate}>April 25</span>
-            <span className={styles.scheduleLabel}>Class 2</span>
+          <div className={styles.scheduleRow}>
+            <span className={styles.scheduleMonth}>May</span>
+            <span className={styles.scheduleDates}>9, 16, 23</span>
           </div>
-          <div className={styles.scheduleItem}>
-            <span className={styles.scheduleDate}>May 9</span>
-            <span className={styles.scheduleLabel}>Class 3</span>
+          <div className={styles.scheduleRow}>
+            <span className={styles.scheduleMonth}>June</span>
+            <span className={styles.scheduleDates}>6</span>
           </div>
-          <div className={styles.scheduleItem}>
-            <span className={styles.scheduleDate}>May 16</span>
-            <span className={styles.scheduleLabel}>Class 4</span>
+          <div className={styles.scheduleRow}>
+            <span className={styles.scheduleMonth}>Final</span>
+            <span className={styles.scheduleDates}>Certification Exam</span>
           </div>
-          <div className={styles.scheduleItem}>
-            <span className={styles.scheduleDate}>May 23</span>
-            <span className={styles.scheduleLabel}>Class 5</span>
-          </div>
-          <div className={styles.scheduleItem}>
-            <span className={styles.scheduleDate}>June 6</span>
-            <span className={styles.scheduleLabel}>Class 6</span>
-          </div>
-          <div className={`${styles.scheduleItem} ${styles.scheduleSpecial}`}>
-            <span className={styles.scheduleDate}>Final</span>
-            <span className={styles.scheduleLabel}>Certification Exam</span>
-          </div>
-          <div className={`${styles.scheduleItem} ${styles.scheduleGrad}`}>
-            <span className={styles.scheduleDate}>June 20</span>
-            <span className={styles.scheduleLabel}>Graduation</span>
+          <div className={`${styles.scheduleRow} ${styles.scheduleRowGrad}`}>
+            <span className={styles.scheduleMonth}>Graduation</span>
+            <span className={styles.scheduleDates}>June 20</span>
           </div>
         </div>
       </section>
