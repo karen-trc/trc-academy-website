@@ -318,6 +318,15 @@ export default function ContactPage() {
                     </div>
                   </div>
 
+                  <div className="border border-red-200 bg-red-50 rounded-lg px-5 py-3 mb-6">
+                    <p className="text-sm font-semibold text-red-700 uppercase tracking-wide">
+                      Absolutely No Solicitation
+                    </p>
+                    <p className="text-sm text-red-600 mt-1">
+                      This form is for prospective clients only. Unsolicited sales or marketing messages will not receive a response.
+                    </p>
+                  </div>
+
                   <div className="bg-trc-blue-50 border-l-4 border-trc-blue-600 p-6 rounded-r-lg">
                     <h3 className="text-xl font-semibold text-trc-gray-900 mb-2">
                       Ready to Begin Your Transformation?
