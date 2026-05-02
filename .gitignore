@@ -50,3 +50,12 @@ nul
 
 .vercel
 .env*.local
+
+# Local ad-hoc admin/test scripts (contain hardcoded credentials)
+scripts/check-programs.ts
+scripts/list-users.ts
+scripts/reset-password.ts
+scripts/setup-local-admin.ts
+scripts/test-create-program-production.ts
+scripts/test-production-api.ts
+scripts/test-program-create.ts
